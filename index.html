@@ -3,9 +3,71 @@
   <head>
     <meta charset="utf-8">
     <title>Random russian letter generator</title>
+    <style media="screen">
+      .container {
+        background-color: #b84d45;
+        padding: 150px 0;
+        margin-bottom: 30px;
+      }
+      .btn-container {
+        text-align: center;
+      }
+      .letter {
+        text-align: center;
+        color: #fff;
+        font-size: 80px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 400;
+      }
+      .generate {
+        padding: 10px 15px;
+        border: 1px solid #b84d45;
+        background-color: transparent;
+        color: #b84d45;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        display: inline-block;
+        margin-bottom: 0;
+        text-align: center;
+        vertical-align: middle;
+        touch-action: manipulation;
+        cursor: pointer;
+        background-image: none;
+        white-space: nowrap;
+        line-height: 1.42857143;
+        border-radius: 4px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .generate:hover {
+        color: #fff;
+        background-color: #b84d45;
+      }
+    </style>
   </head>
   <body>
-    <h1>Random russian letter generator</h1>
+    <div class="container">
+      <h1 class="letter">А</h1>
+    </div>
+    <div class="btn-container">
+      <button class="generate">Generate</button>
+    </div>
+    <script type="text/javascript">
+      var letterLabel = document.getElementsByClassName('letter')[0];
+      var button = document.getElementsByClassName('generate')[0]
+      var alphabet = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
+      var alphabetLength = alphabet.length;
 
+      function generateLetter() {
+        letterLabel.innerHTML = alphabet[ Math.floor(Math.random() * alphabetLength) ];
+      }
+
+      button.addEventListener("click", generateLetter, false);
+
+      generateLetter();
+    </script>
   </body>
 </html>
