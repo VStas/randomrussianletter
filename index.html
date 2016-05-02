@@ -61,12 +61,11 @@
     </div>
     <script type="text/javascript">
       var letterLabel = document.getElementsByClassName('letter')[0];
-      var button = document.getElementsByClassName('generate')[0]
+      var button = document.getElementsByClassName('generate')[0];
       var alphabet = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
-      var alphabetLength = alphabet.length;
 
       function generateLetter() {
-        letterLabel.innerHTML = alphabet[ Math.floor(Math.random() * alphabetLength) ];
+        letterLabel.innerHTML = alphabet[ Math.floor(Math.random() * alphabet.length) ];
       }
 
       button.addEventListener("click", generateLetter, false);
